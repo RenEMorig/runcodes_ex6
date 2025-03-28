@@ -1,0 +1,36 @@
+
+#include <stdio.h>
+#include <math.h>
+
+double ret_delta(double a, double b, double c) {
+    double delta = (b*b) - (4*a*c);
+    return delta;
+}
+
+void print_raizes(double a, double b, double c) {
+    double delta, r1, r2;
+    delta = ret_delta(a, b, c);
+
+    if(delta >= 0 && a != 0) {
+        r1 = (-b + sqrt(delta))/(2*a);
+        r2 = (-b - sqrt(delta))/(2*a);
+
+        printf("R1 = %.5lf\nR2 = %.5lf", r1, r2);
+
+    } else {
+        printf("Impossivel calcular");
+    }
+
+}
+
+
+int main()  {
+
+    double a, b, c;
+
+    scanf("%lf %lf %lf", &a, &b, &c);
+    print_raizes(a, b, c);
+
+    return 0;
+
+}
